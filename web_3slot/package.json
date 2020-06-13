@@ -1,0 +1,19 @@
+{
+  "name": "nodeweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "base64-arraybuffer": "^0.1.5",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "ffmpeg": "0.0.4",
+    "mjpeg-server": "^0.3.0",
+    "socket.io": "^2.2.0"
+  }
+}

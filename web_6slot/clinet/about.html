@@ -1,0 +1,80 @@
+<html>
+    <body>
+        <style>
+            body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-family: "Lucida Console", Monaco, monospace ;
+            background-color: #666;
+            color: white;
+        }
+        </style>
+        <h1>Smart Car Park System</h1>
+        <h2>Features</h2>
+        <h3>Object detection</h3>
+        <ul>
+            <li>detects whether the car park is occupied, obstructed or unoccupied</li>
+        </ul>
+        <h3>Website</h3>
+        <ul>
+            <li>automatically shows the current status of the car park</li>
+            <li>displays live stream of parking area</li>
+        </ul>
+        <h3>Mobile app</h3>
+        <ul>
+            <li>display status of the car park </li>
+            <li>sorting feature for helping drivers find the most suitable car park</li>
+        </ul>
+        <h3>Desktop app</h3>
+        <ul>
+            <li>monitor display inside car park to show drivers which section of the car park is available</li>
+        </ul>
+        <h2>Instructions</h2>
+        <h3>To start the web server and object detection:</h3>
+        <ul>
+            <li>install node.js </li>
+            <li>look up the ip address of the local computer and compile the desktop app and mobile app accordingly*</li>
+            <li>go to the directory web_3slot or web_6slot, depending on how many slot the car park has</li>
+            <li>open command prompt and navigate to the directory web_3slot or web_6slot</li>
+            <li>start the server using the command `node index.js`</li>
+            <li>run take_photo.exe</li>
+            <li>open a web browser (preferably Google Chrome) and type “localhost:5000” into the search bar</li>
+        </ul>
+        <h3>*To compile the desktop app and mobile app:</h3> 
+        Due to technical reasons(programs has to be connected to a specific ip), codes have to be changed before using it
+        <h4>Mobile app:</h4>
+        <ul>
+            <li>Go to MainPage.xaml.cs</li>
+            <li>Look for var socket = IO.Socket("http://{currentIp}:5000"); and change it to var socket = IO.Socket("http://{local IP of the server}:5000");</li>
+            <li>Right click ClientApp.Android, click properties and go to android options</li>
+            <li>Uncheck Use Shared Runtime</li>
+            <li>Select Sdk Assemblies Only under Linking</li>
+            <li>Save and right click ClientApp.Android, select Archive and click distribute</li>
+            <li>Follow instructions on <a href="https://docs.microsoft.com/zh-tw/xamarin/android/deploy-test/signing/?tabs=windows">this page</a> to get the .apk file</li>
+        </ul>
+        <h4>Desktop app:</h4>
+        <ul>
+            <li>Go to MainWindow.xaml.cs</li>
+            <li>Look for var socket = IO.Socket("http://{currentIp}:5000"); and change it to var socket = IO.Socket("http://{local IP of the server}:5000");</li>
+            <li>Save and run the application</li>
+        </ul>
+        <h2>Object detection</h2>
+        <h3>Training</h3>
+        A convolution neural network is trained to detect cars or obstructions inside the parking space. The model is trained using keras, a high-level neural network API, and TensorFlow backend. 
+        <h3>Dataset</h3>
+        The dataset consist of images of 3 classes: cars, hands and nothing, which corresponds to the 3 classes of detection results, occupied, obstructed and unoccupied.
+        <br/>
+        The “car” set consists of images of toy cars inside the parking space of our setup. The “hand” set consists of images of hands in the parking spaces of our setup. It is to simulate non-car objects like people in the parking spaces. The “nothing” set consists of image of the parking space without anything on it.  
+        <br/>
+        Black and white images are used because color is not an important factor in the identification of cars. This helps eliminate the error caused due to the different colors of cars in training and usage.  
+        <h3>Model Architecture</h3>
+        4 convolution layers was used, with max pooling layer after every 1 convolution layer. 
+        <br/>
+        A flatten layer was used to reduce the dimension to 1.
+        <br/>
+        A dropout layer was added to prevent overfitting.
+        <br/>
+        2 dense layer was added at the end.
+    </body>
+</html>

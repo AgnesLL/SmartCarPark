@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientApp.ParkingLotTemplate">
+  <ContentView.Content>
+        <!-- Place new controls here -->
+        <StackLayout BackgroundColor="Orange" x:Name="contentBackground" HeightRequest="150">
+            <Grid BackgroundColor="#202020" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image x:Name="image" Source="{Binding imgSource}" HeightRequest="150" WidthRequest="130" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Grid BackgroundColor="#202020" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="{Binding Location}" Grid.Row="0" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="24"/>
+                    <Label Text="{Binding SpacesLeft}" Grid.Row="1" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="24"/>
+                    <Label Text="{Binding Distance}" Grid.Row="2" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="24"/>
+                    <Label Text="{Binding State}" Grid.Row="3" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="24"/>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

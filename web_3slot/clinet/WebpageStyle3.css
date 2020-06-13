@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Lucida Console", Monaco, monospace ;
+    background-color: #666;
+    color: white;
+}
+
+#title {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+#header {
+    color: white;
+    padding: 5px;
+    background-color: #444;
+}
+
+#float {
+    float: right;
+}
+
+#base64img {
+    margin-right:15px;
+    width: 500px;
+    height: 345px;
+	border: 10px #232323 solid;
+	padding: 5px;
+}
+
+#videoElement {
+    margin: 0px;
+    width: 500px;
+    height: 345px;
+    background-color: #666;
+}
+
+table {
+	border-color: #232323;
+	margin-left: 30px;
+	border-width: 10px;
+	border-style: solid;
+	padding: 5px;
+}
+
+#tr_a td {
+	border-width: 5px;
+	border-style: dashed;
+	border-color: #07ff49;
+	background-color: #1e7f38;
+	width: 150px;
+	height: 275px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#tr_b td {
+	border-width: 5px;
+	border-style: solid;
+	border-color: #07ff49;
+	background-color: #1e7f38;
+	width: 150px;
+	height: 70px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-align: center;
+	font-size: 20px;
+}
+
+
+/*	MENU	*/
+
+
+#menu {
+	text-align: left;
+	border-style: none;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+  
+li {
+	float: left;
+}
+  
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 20px;
+	text-decoration: none;
+	height: 20px;
+}
+  
+li a:hover {
+	background-color: #111;
+}
+
+/*	GRAPHS	*/
+
+
+#graph_box {
+	position: fixed;
+	top: 50;
+	height: 100%;
+	width: 100%;
+}
+
+#graph_box div {
+	display: inline-block;
+	width:49%;
+	height:70%;
+	margin:0px;
+}
+
+#hour_graph {
+	position: absolute;
+	right: 0px;
+
+}
+
+#time_graph {
+	position: absolute;
+	left: 0px;
+
+}
